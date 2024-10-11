@@ -1,0 +1,84 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed,
+  figure, figcaption, footer, header, hgroup,
+  menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  
+}
+
+body{
+  height:100vh;
+  font-family:'noto sans' 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background: rgb(241,241,225);
+  background: linear-gradient(121deg, rgba(241,241,225,1) 0%, rgba(246,202,212,1) 47%, rgba(231,210,227,1) 88%, rgba(220,215,235,1) 100%); 
+}
+.nav_bar_container {
+    display: flex;
+    justify-content: space-between; /* 로고와 메뉴 항목을 양쪽 끝에 배치 */
+    align-items: center;
+    background-color: #252525c8;
+    padding: 10px 20px;
+    height: 40px;
+    
+}
+.nav_bar_logo{
+    color:white;
+}
+.korean_title{
+    color:white;
+}
+.nav_bar_logo img {
+    height: 20px; /* 로고 크기 조절 */
+}
+
+
+.logo_container{
+    width:50vw;
+    height:50vh;
+    margin:auto;
+    background-image: url(/contents/logobw.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-attachment: fixed;
+    /* filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.5)); */
+    /* 3D 회전 효과 */
+    transform-style: preserve-3d;
+    animation: rotate3D 10s infinite linear; /* 5초 동안 회전 */
+}
+.contact{
+    color:white;
+    text-align: center;
+}
+/* 3D 회전 애니메이션 설정 */
+@keyframes rotate3D {
+    0% {
+        transform: perspective(550px) rotateY(0deg); /* 초기 위치 */
+    }
+    100% {
+        transform: perspective(550px) rotateY(360deg); /* 360도 회전 */
+    }
+}
