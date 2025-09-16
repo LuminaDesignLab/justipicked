@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/index.css" />
+    <title>People - Just IPicked</title>
+    <style>
+      /* Basic styling for the body to ensure good contrast */
+      body {
+        color: #2c2c2c; /* Dark text color for better contrast */
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Navigation bar styling */
+      .nav_bar_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        color: white;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .nav_bar_logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+
+      .nav_bar_logo img {
+        height: 30px;
+        margin-right: 10px;
+      }
+
+      .nav_menu {
+        display: flex;
+        gap: 30px;
+      }
+
+      .nav_item {
+        color: white;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: bold;
+        padding: 10px 15px;
+        transition: color 0.3s ease;
+      }
+
+      .nav_item:hover {
+        color: #bb86fc; /* Accent color on hover */
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown_content {
+        display: none;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.8);
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+        padding: 10px 0;
+      }
+
+      .dropdown_content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s ease;
+      }
+
+      .dropdown_content a:hover {
+        background-color: #333;
+      }
+
+      .dropdown:hover .dropdown_content {
+        display: block;
+      }
+
+      /* Main page content styling */
+      .main {
+        padding: 50px 20px;
+      }
+
+      .page_content {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .page_title {
+        color: #bb86fc; /* Accent color for titles */
+        font-size: 3em;
+        margin: 50px 0;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+
+      .modern_container {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        margin-top: 40px;
+      }
+
+      .page_subtitle {
+        color: #2c2c2c;
+        font-size: 2em;
+        margin-bottom: 30px;
+        font-weight: 600;
+      }
+
+      .team_grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+        margin-top: 40px;
+      }
+
+      .team_card {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 30px;
+        border-radius: 12px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .team_card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      }
+
+      .service_title {
+        color: #8e44ad; /* Purple accent color for titles */
+        font-size: 1.5em;
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+
+      .page_text {
+        color: #444444; /* Dark text for better readability */
+        font-size: 1em;
+        line-height: 1.6;
+      }
+
+      .service_description {
+        color: #444444;
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-top: 10px;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .nav_bar_container {
+          flex-direction: column;
+          padding: 20px;
+        }
+        .nav_menu {
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-top: 20px;
+          gap: 15px;
+        }
+        .page_title {
+          font-size: 2.5em;
+        }
+        .team_grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav_bar_container">
+      <div>
+        <div class="nav_bar_logo">
+          <img src="contents/logo.png" alt="Logo" /> 저스트아이피
+        </div>
+      </div>
+      <div class="nav_menu">
+        <a href="index.html" class="nav_item">HOME</a>
+        <div class="nav_item dropdown">
+          <span>ABOUT</span>
+          <div class="dropdown_content">
+            <a href="company.html">Company</a>
+            <a href="people.html">People</a>
+          </div>
+        </div>
+        <div class="nav_item dropdown">
+          <span>FORMAT</span>
+          <div class="dropdown_content">
+            <a href="unscripted.html">Unscripted</a>
+            <a href="scripted.html">Scripted</a>
+          </div>
+        </div>
+        <a href="ip-development.html" class="nav_item">IP DEVELOPMENT</a>
+        <a href="trailer-production.html" class="nav_item"
+          >TRAILER PRODUCTION</a
+        >
+        <a href="contact.html" class="nav_item">CONTACT</a>
+      </div>
+    </nav>
+    <div class="main">
+      <div class="page_content">
+        <h1 class="page_title">PEOPLE</h1>
+        <div class="modern_container">
+          <h2 class="page_subtitle" style="text-align: center">Leadership</h2>
+          <br />
+          <div class="team_grid">
+            <div
+              class="team_card"
+              style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto"
+            >
+              <h3 class="service_title">Praise Shin - Founder & CEO</h3>
+              <div style="text-align: left; margin-top: 20px">
+                <p class="page_text" style="margin-bottom: 20px">
+                  Praise Shin, founder and CEO of JustIPicked, is a trailblazer
+                  in bringing independently developed Korean IP to the global
+                  stage.
+                </p>
+
+                <p class="page_text" style="margin-bottom: 20px">
+                  Under her leadership, Battle in the Box became Korea's first
+                  independent format to achieve international success, securing
+                  sales in 25 countries across Europe, North America, and
+                  beyond—a groundbreaking milestone that redefined what Korean
+                  creativity can accomplish on its own.
+                </p>
+
+                <p class="page_text" style="margin-bottom: 20px">
+                  With academic experience in Canada and advanced studies in
+                  International Regional Studies, Praise combines a deep
+                  understanding of global markets and cultural dynamics with a
+                  rare blend of content expertise and IT-driven business
+                  insight. This unique perspective allows her to approach every
+                  collaboration with strategic precision, operational clarity,
+                  and a truly global mindset.
+                </p>
+
+                <p class="page_text">
+                  Her ability to bridge creative vision with strategic execution
+                  has made her a trusted partner for broadcasters, investors,
+                  and producers worldwide, ensuring that Korean IP doesn't just
+                  enter global markets but thrives in them.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
