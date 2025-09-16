@@ -250,3 +250,98 @@ body{
         transform: perspective(550px) rotateY(360deg); /* 360도 회전 */
     }
 }
+
+
+
+/* ====== Responsive Hamburger Menu ====== */
+
+/* 버튼 기본 숨김(데스크톱) */
+.hamburger {
+  display: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: auto;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  margin: 5px 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* 토글 시 X 아이콘 */
+.hamburger.is-active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.is-active span:nth-child(2) { opacity: 0; }
+.hamburger.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* 작은 화면 레이아웃 */
+@media (max-width: 768px) {
+  .nav_bar_container {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  /* 버튼 보이기 */
+  .hamburger {
+    display: inline-block;
+  }
+
+  /* 기본 메뉴 숨기기 + 세로형 전환 준비 */
+  .nav_menu {
+    display: none;              /* 데스크톱의 가로 메뉴는 숨김 */
+    position: absolute;
+    top: 60px;                  /* .nav_bar_container 높이와 맞춤 */
+    right: 0;
+    left: 0;
+    flex-direction: column;     /* 세로 정렬 */
+    gap: 0;
+    background-color: #252525;  /* 바 배경과 통일 */
+    padding: 10px 12px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* 버튼으로 열렸을 때 */
+  .nav_menu.is-open {
+    display: flex;
+  }
+
+  /* 링크 스타일(터치 영역 키우기) */
+  .nav_item {
+    padding: 12px 4px;
+    font-size: 15px;
+  }
+
+  /* 드롭다운: 호버 대신 '탭 열림'에 가깝게 보이도록 항상 아래로 배치 */
+  .dropdown {
+    position: static;
+  }
+  .dropdown_content {
+    position: static;
+    display: none;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+  /* 드롭다운 항목은 네비 아래에 들여쓰기 */
+  .dropdown_content a {
+    padding: 10px 14px;
+    font-size: 14px;
+    opacity: 0.9;
+  }
+
+  /* 모바일에서 드롭다운을 탭-열림처럼 보이게: 제목을 탭하면 한번 더 탭해 하위 링크로 이동 */
+  .dropdown > span {
+    display: block;
+    padding: 12px 4px;
+  }
+  /* 간단 구현: 드롭다운 영역을 탭하면 펼쳐짐(첫 탭에 :focus-within으로 열림) */
+  .dropdown:focus-within .dropdown_content,
+  .dropdown:hover .dropdown_content {
+    display: block;
+  }
+}
