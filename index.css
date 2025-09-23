@@ -345,3 +345,24 @@ body{
     display: block;
   }
 }
+
+/* ===== Lists in content ===== */
+.page_text ul {
+  list-style: disc;
+  list-style-position: outside; /* 불릿을 텍스트 바깥쪽에 */
+  margin: 0.6em 0 0.6em 1.2em;  /* 위아래 간격 + 기본 들여쓰기 */
+  padding-left: 0;              /* margin-left로 들여쓰기 관리 */
+}
+.page_text li {
+  margin: 0.25em 0;
+}
+
+/* 중첩 리스트는 단계별로 스타일/들여쓰기 변경 */
+.page_text ul ul {
+  list-style: circle;
+  margin-left: 1.2em;
+}
+.page_text ul ul ul {
+  list-style: square;
+  margin-left: 1.2em;
+}
